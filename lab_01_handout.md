@@ -150,28 +150,19 @@ _Performs quality control and trimming._
   megahit --min-contig 500 -t 8 -1 input_illumina_R1 -2 input_illumina_R2 -o megahit_illumina
   ```
 
-- **SPAdes (short-read assembly) - <span style="color:red; font-weight:bold;">DO NOT RUN</span>:**
+- **SPAdes (short-read assembly):**
   ```bash
   spades.py -t 10 -m 100 --only-assembler -1 input_illumina_R1 -2 input_illumina_R2 -k 21,33,55,77,99,121 -o spades_illumina
   ```
 
-- **SPAdes (hybrid assembly) - <span style="color:red; font-weight:bold;">DO NOT RUN</span>:**
+- **SPAdes (hybrid assembly):**
   ```bash
   spades.py --only-assembler -1 input_illumina_R1 -2 input_illumina_R2 --nanopore nanopore_data -o spades_hybrid_output -k 21,33,55,77,99,121 -t 10 -m 100
   ```
 
-- **Flye (long-read assembly) - <span style="color:red; font-weight:bold;">DO NOT RUN</span>:**
+- **Flye (long-read assembly):**
   ```bash
   flye --threads 10 --nano-raw nanopore_data -o flye_nanopore
-  ```
-
-- **SPAdes and Flye outputs are availabe in the following folder:**
-  ```bash
-  /home/users/mdziurzynski/zajecia/tgt_2025/blok_1/lab_1/assemblies
-  ```
-- Create symlink(s) from your own, home folder:
-  ```bash
-  ln -s <file> <link>
   ```
 
 #### **Step 4: Assembly Quality Analysis**
