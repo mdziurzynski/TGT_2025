@@ -122,7 +122,7 @@ _Creates a shortcut to the read files in your home directory._
   ```bash
   NanoPlot --verbose --fastq nanopore_data --outdir nanoplot_output -t 4
   ```
-_Analyzes Nanopore sequencing data._
+_Prepares a report to assess Nanopore data quality._
 
 **Run fastp for Illumina data:**
   ```bash
