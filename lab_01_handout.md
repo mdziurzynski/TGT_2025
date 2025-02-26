@@ -109,9 +109,14 @@ Reads are available in **GenBank Sequence Read Archive (SRA):**
 - Illumina: `SRR26874108`
 - Nanopore: `SRR26874107`
 
-**Create symbolic links to access reads**
+**The files are aleady downloaded and are available in this folder:**
   ```bash
-  ln -s <file> <link>
+  /home/users/mdziurzynski/zajecia/tgt_2025/blok_1/data
+  ```
+
+**Create symbolic links in your home directory**
+  ```bash
+  ln -s <file/folder_path> <link>
   ```
 _Creates a shortcut to the read files in your home directory._
 
