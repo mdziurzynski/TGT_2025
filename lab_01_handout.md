@@ -29,27 +29,28 @@ To access the `edi00` server, follow these steps:
 
 ### **2. Installing Conda**
 **Step 1: Download and install Miniconda**
-    ```bash
-    mkdir -p ~/miniconda3
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm ~/miniconda3/miniconda.sh
-    ```
+  ```bash
+  mkdir -p ~/miniconda3
+  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+  bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+  rm ~/miniconda3/miniconda.sh
+  ```
 _Creates a directory, downloads Miniconda, installs it, and removes the installer._
 
 **Step 2: Restart terminal and log in again.**
 
+
 **Step 3: Initialize Conda**
-    ```bash
-    source ~/miniconda3/bin/activate
-    conda init --all
-    ```
+  ```bash
+  source ~/miniconda3/bin/activate
+  conda init --all
+  ```
 _Activates Conda and initializes it for all shells._
 
 **Step 4: Set up environment**
-    ```bash
-    conda create -n genome_assembly_lab1 -c bioconda -c conda-forge flye spades quast megahit sra-tools fastp fastqc nanoplot jupyterlab
-    ```
+  ```bash
+  conda create -n genome_assembly_lab1 -c bioconda -c conda-forge flye spades quast megahit sra-tools fastp fastqc nanoplot jupyterlab
+  ```
 _Creates a Conda environment with necessary genomics tools._
 
 ---
@@ -58,46 +59,46 @@ _Creates a Conda environment with necessary genomics tools._
 JupyterLab requires **port forwarding**.
 
 **Step 1: Open SSH configuration file on your PC**
-    ```bash
-    nano ~/.ssh/config
-    ```
+  ```bash
+  nano ~/.ssh/config
+  ```
 _Edit the SSH configuration file._
 
 **Step 2: Add the following configuration**
-    ```
-    host edi_jumphost
-      HostName lbs.cent.uw.edu.pl
-      User your_username
-      LocalForward your_port 127.0.0.1:your_port
-    
-    host edi00_jupyterlab
-      HostName 10.10.61.23
-      ProxyJump edi_jumphost
-      User your_username
-      LocalForward your_port 127.0.0.1:your_port
-    
-    Host *
-      ServerAliveInterval 40
-    ```
+  ```
+  host edi_jumphost
+    HostName lbs.cent.uw.edu.pl
+    User your_username
+    LocalForward your_port 127.0.0.1:your_port
+  
+  host edi00_jupyterlab
+    HostName 10.10.61.23
+    ProxyJump edi_jumphost
+    User your_username
+    LocalForward your_port 127.0.0.1:your_port
+  
+  Host *
+    ServerAliveInterval 40
+  ```
 _Sets up port forwarding for JupyterLab._
 
 **Step 3: SSH into the server in a new terminal**
-    ```bash
-    ssh edi00_jupyterlab
-    ```
+  ```bash
+  ssh edi00_jupyterlab
+  ```
 _Connects to edi00 through the configured SSH setup._
 
 **Step 4: Activate Conda and start JupyterLab**
-    ```bash
-    conda activate genome_assembly_lab1
-    jupyter lab --no-browser --port=your_port
+  ```bash
+  conda activate genome_assembly_lab1
+  jupyter lab --no-browser --port=your_port
     ```
 _Activates the environment and starts JupyterLab._
 
 **Step 5: Open JupyterLab in a browser fe. Firefox**
-    ```
-    localhost:your_port
-    ```
+  ```
+  localhost:your_port
+  ```
 _Access JupyterLab from your local machine._
 
 ---
@@ -109,32 +110,33 @@ Reads are available in **GenBank Sequence Read Archive (SRA):**
 - Nanopore: `SRR26874107`
 
 **Create symbolic links to access reads**
-```bash
-ln -s <file> <link>
-```
+  ```bash
+  ln -s <file> <link>
+  ```
 _Creates a shortcut to the read files in your home directory._
 
 #### **Step 2: Quality Control**
 
 
 **Run NanoPlot for Nanopore data:**
-    ```bash
-    NanoPlot --verbose --fastq nanopore_data --outdir nanoplot_output -t 4
-    ```
+  ```bash
+  NanoPlot --verbose --fastq nanopore_data --outdir nanoplot_output -t 4
+  ```
 _Analyzes Nanopore sequencing data._
 
 **Run fastp for Illumina data:**
-    ```bash
-    fastp \
-      -i illumina_R1_input \
-      -I illumina_R2_input \
-      -o illumina_R1_output.gz \
-      -O illumina_R2_output.gz \
-      -q 20 \
-      --detect_adapter_for_pe \
-      --correction \
-      -w 5
-    ```
+  ```bash
+  fastp \
+    -i illumina_R1_input \
+    -I illumina_R2_input \
+    -o illumina_R1_output.gz \
+    -O illumina_R2_output.gz \
+    -q 20 \
+    --detect_adapter_for_pe \
+    --correction \
+    -w 5
+  ```
+  
 _Performs quality control and trimming._
 
 #### **Step 3: Genome Assembly**
@@ -175,6 +177,8 @@ _Performs quality control and trimming._
   _Evaluates assembly quality._
 
 Open report.html in quast_output and compare the assemblies.
+---
+
 
 _Prepared by Mikołaj Dziurzyński, 26.02.2025, University of Warsaw_
 
