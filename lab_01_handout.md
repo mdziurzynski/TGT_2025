@@ -2,6 +2,10 @@
 
 **Bash Commands for Lab 1: Genomics and Transcriptomics Techniques**
 
+### **Introduction**
+
+- link to questionnaire: ```https://forms.gle/7eYuNTWWHRWNAtcX9```
+
 ### **1. Logging into the Server**
 To access the `edi00` server, follow these steps:
 
