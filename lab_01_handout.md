@@ -119,6 +119,12 @@ Reads are available in **GenBank Sequence Read Archive (SRA):**
   /home/users/mdziurzynski/zajecia/tgt_2025/blok_1/data
   ```
 
+**To donwload the reads**:
+  ```bash
+  fastq-dump -v --split-files SRR26874108
+  fastq-dump -v SRR26874107
+  ```
+
 **Create symbolic links in your home directory**
   ```bash
   ln -s <file/folder_path> <link>
