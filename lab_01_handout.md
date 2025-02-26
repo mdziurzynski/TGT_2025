@@ -174,7 +174,7 @@ _Performs quality control and trimming._
   ```bash
   quast -o quast_output -t 8 {path_to_assembly_fasta_1} {path_to_assembly_fasta_2} etc.
   ```
-  _Evaluates assembly quality._
+  _Prepares a comprehensive report that compares assemblies._
 
 Open report.html in quast_output and compare the assemblies.
 ---
