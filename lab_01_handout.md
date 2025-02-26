@@ -119,7 +119,7 @@ Reads are available in **GenBank Sequence Read Archive (SRA):**
   /home/users/mdziurzynski/zajecia/tgt_2025/blok_1/data
   ```
 
-**To donwload the reads**:
+**To download the reads run the following commands in your conda _genome_assembly_lab1_**:
   ```bash
   fastq-dump -v --split-files SRR26874108
   fastq-dump -v SRR26874107
