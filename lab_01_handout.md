@@ -92,7 +92,7 @@ _Connects to edi00 through the configured SSH setup._
   ```bash
   conda activate genome_assembly_lab1
   jupyter lab --no-browser --port=your_port
-    ```
+  ```
 _Activates the environment and starts JupyterLab._
 
 **Step 5: Open JupyterLab in a browser fe. Firefox**
