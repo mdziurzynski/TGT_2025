@@ -4,8 +4,8 @@
 
 ### **Introduction**
 
-- link to questionnaire: ```https://forms.gle/7eYuNTWWHRWNAtcX9```
-- link to EDI cluster docs: ```https://labstructbioinf.github.io/edi/```
+- link to questionnaire: [https://forms.gle/7eYuNTWWHRWNAtcX9](https://forms.gle/7eYuNTWWHRWNAtcX9)
+- link to EDI cluster docs: [https://labstructbioinf.github.io/edi/](https://labstructbioinf.github.io/edi/)
 
 ### **1. Logging into the Server**
 To access the `edi00` server, follow these steps:
