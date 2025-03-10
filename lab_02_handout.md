@@ -99,7 +99,35 @@ To start JupyterLab from the command line:
 
 ---
 
-## 6. Additional Notes
+## 6. Installing and Running BlobTools
+
+
+
+1. **Install BlobTools following the official documentation:**
+   - [BlobTools GitHub](https://github.com/DRL/blobtools)
+
+2. **Generate BlobTools databases and BlobPlots for the following datasets**:
+    - dataset_1
+
+        _/home/nfs/teaching/tgt_2025/lab_2/blobtools/blobtools_dataset_1_
+    
+    - dataset_2
+    
+        _/home/nfs/teaching/tgt_2025/lab_2/blobtools/blobtools_dataset_2_
+
+
+- **Task**:
+  1. Adjust commands listed in this tutorial: [My First BlobPlot](https://blobtools.readme.io/docs/my-first-blobplot).
+  2. You do not need to run any aligners (blastn, minimap etc.) - all input data is available in the above listed folders!
+  3. Compare the results.
+
+**Questions to consider**:
+- Is there any contamination in our assemblies?
+- How can we identify which contigs are contaminants?
+
+---
+
+## 7. Additional Notes
 
 - Refer to the official [BUSCO documentation](https://busco.ezlab.org/) for detailed command options and lineage datasets.
 
