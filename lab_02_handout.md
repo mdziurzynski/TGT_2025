@@ -99,7 +99,43 @@ To start JupyterLab from the command line:
 
 ---
 
-## 6. Installing and Running BlobTools
+## 6. SLURM
+
+1. **Basic SLURM commands**:
+
+```
+sinfo                          # Show information about SLURM partitions
+squeue                         # Show current jobs queue
+scontrol show job <job_id>     # Get status information of my job
+sbatch <your_script_file>.sh   # Run a job
+```
+
+2. **SLURM batch template**:
+```
+#!/bin/bash
+#SBATCH --job-name=<your_job_name>         # Job name
+#SBATCH --cpus-per-task=10                 # Number of CPU cores
+#SBATCH --mem=15G                          # How much RAM is required
+#SBATCH -p cpu                             # CPU partition
+#SBATCH --output=<std_out_file>.out        # Standard output stream
+#SBATCH --error=<std_err_file>.out         # Standard error stream
+#SBATCH --nodelist=edi0
+
+
+# Load Conda environment
+export PATH=<your_miniconda3_path>/miniconda3/bin:$PATH          # Adjust to your Conda installation path
+source <your_miniconda3_path>/miniconda3/etc/profile.d/conda.sh  # Ensure Conda is initialized
+
+# Activate your environment
+conda activate genome_assembly_lab1
+
+# Run your script
+<your command(s) to run>
+```
+
+---
+
+## 7. Installing and Running BlobTools
 
 
 
