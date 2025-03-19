@@ -93,10 +93,10 @@ Build BAM alignment file **(with SLURM, 10 CPU, 5GB RAM)**:
 
 ```bash
 bwa index biggest_contig.fasta
-bwa mem -t 8 biggest_contig.fasta /home/nfs/teaching/tgt_2025/lab_4/Umbe_pre_R1_001.fastq.gz /home/nfs/teaching/tgt_2025/lab_4/Umbe_pre_R2_001.fastq.gz > biggest_contig.sam
-samtools view -bS biggest_contig.sam | samtools sort -o biggest_contig.sorted.bam
-samtools view -b -F 4 biggest_contig.sorted.bam > biggest_contig.sorted.mapped.bam
-samtools index biggest_contig.sorted.mapped.bam
+bwa mem -t 8 biggest_contig.fasta /home/nfs/teaching/tgt_2025/lab_4/Umbe_pre_R1_001.fastq.gz /home/nfs/teaching/tgt_2025/lab_4/Umbe_pre_R2_001.fastq.gz > biggest_contig.sam # mapping RNAseq reads agains the biggest contig fasta
+samtools view -bS biggest_contig.sam | samtools sort -o biggest_contig.sorted.bam # converting SAM to BAM and sorting
+samtools view -b -F 4 biggest_contig.sorted.bam > biggest_contig.sorted.mapped.bam # removing non-mapped reads
+samtools index biggest_contig.sorted.mapped.bam # indexing the BAM file
 ```
 
 ## **Evaluating Annotation with IGV**
