@@ -41,17 +41,11 @@ augustus
 gzip -d gm_key_64.gz
 mv gm_key_64 .gm_key
 tar -xvzf gmes_linux_64_4.tar.gz
-echo 'export PATH=$HOME/gmes_linux_64:$PATH' >> ~/.bashrc
+echo 'export PATH=$HOME/gmes_linux_64_4:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-4. Configure Perl path:
-
-```bash
-export PERL5LIB=$CONDA_PREFIX/lib/site_perl:$CONDA_PREFIX/lib/perl5/site_perl:$PERL5LIB
-```
-
-5. Install GeneMark environment:
+4. Install GeneMark environment:
 
 ```bash
 conda env create -f genemark_env.yml
@@ -84,9 +78,11 @@ gmes_petap.pl --sequence biggest_contig.fasta --ES --fungus --cores 10 --work_di
 
 ## **RNAseq Alignments**
 
+Run the alignment in the genome_assembly_lab1 conda environment.
+
 ```bash
 conda activate genome_assembly_lab1
-conda install -c conda-forge -c bioconda bwa gffread
+conda install -c conda-forge -c bioconda bwa gffread samtools
 ```
 
 Build BAM alignment file **(with SLURM, 10 CPU, 5GB RAM)**:
