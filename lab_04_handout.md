@@ -144,7 +144,7 @@ Use the following full genome protein set:
 
 Use **Eukaryotic reference gene set**.
 
-[Computed results](https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1742384212&key=ke6ViRLm
+[Computed results](https://www.genome.jp/kaas-bin/kaas_main?mode=map&id=1742987505&key=tcf1egel
 )
 
 Questions:
